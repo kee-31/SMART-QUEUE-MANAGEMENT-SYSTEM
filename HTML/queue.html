@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Token Booking</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Queue Token Booking</h2>
+
+    <form>
+
+        <label>Full Name</label>
+        <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+            required>
+
+        <label>Select Service</label>
+
+        <select id="service" required>
+            <option value="">-- Select Service --</option>
+            <option>Hospital</option>
+            <option>Bank</option>
+            <option>Government Office</option>
+            <option>College Office</option>
+        </select>
+
+        <button
+            type="button"
+            onclick="generateToken()">
+            Generate Token
+        </button>
+
+    </form>
+
+    <div id="result" style="margin-top:25px;"></div>
+
+</div>
+
+<script src="../JAVASCRIPT/script.js"></script>
+
+</body>
+</html>

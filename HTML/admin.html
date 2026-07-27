@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="../CSS/style.css">
+
+</head>
+
+<body>
+
+<div class="container" style="width:90%;">
+
+<h2>Admin Dashboard</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Token</th>
+<th>Name</th>
+<th>Service</th>
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tableData">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script>
+
+let tokens = JSON.parse(localStorage.getItem("tokens")) || [];
+
+let output="";
+
+tokens.forEach(function(t){
+
+output += `
+<tr>
+
+<td>${t.token}</td>
+
+<td>${t.name}</td>
+
+<td>${t.service}</td>
+
+<td>${t.status}</td>
+
+</tr>
+`;
+
+});
+
+document.getElementById("tableData").innerHTML=output;
+
+</script>
+
+</body>
+</html>
