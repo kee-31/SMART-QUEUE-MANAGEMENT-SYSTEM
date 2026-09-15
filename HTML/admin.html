@@ -58,7 +58,13 @@ output += `
 
 <td>${t.service}</td>
 
-<td>${t.status}</td>
+<td>
+<select onchange="updateStatus(${tokens.indexOf(t)}, this.value)">
+<option value="Waiting" ${t.status === "Waiting" ? "selected" : ""}>Waiting</option>
+<option value="In Progress" ${t.status === "In Progress" ? "selected" : ""}>In Progress</option>
+<option value="Completed" ${t.status === "Completed" ? "selected" : ""}>Completed</option>
+</select>
+</td>
 
 </tr>
 `;
@@ -66,6 +72,14 @@ output += `
 });
 
 document.getElementById("tableData").innerHTML=output;
+
+function updateStatus(index, status){
+
+tokens[index].status = status;
+
+localStorage.setItem("tokens", JSON.stringify(tokens));
+
+}
 
 </script>
 
